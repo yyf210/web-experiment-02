@@ -39,7 +39,8 @@
 
     <!-- 注册表单 核心部分 -->
     <h3>填写注册信息</h3>
-    <form onsubmit="showData()">
+    <form onsubmit="showData(); return false;">
+
         
         <p>
             用户名：<input type="text" name="username" required>
@@ -130,7 +131,7 @@
 
 <footer>
     <hr>
-    <p align="center">版权所有 软工2402 杨雨帆</p>
+    <p align="center">版权所有软工2402 杨雨帆</p>
 </footer>
 
 <script>
