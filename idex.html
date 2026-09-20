@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+
+<header>
+    <h1 align="center">用户注册页面</h1>
+</header>
+
+<main>
+    <!-- 表格：注册须知 带colspan合并 -->
+    <h3>注册须知</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th colspan="2">注册注意事项</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>账号要求</td>
+                <td>用户名必填，密码长度6到16位</td>
+            </tr>
+            <tr>
+                <td>信息真实</td>
+                <td>请填写真实的邮箱和手机号</td>
+            </tr>
+            <tr>
+                <td>隐私保护</td>
+                <td>个人信息不会对外泄露</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><hr><br>
+
+    <!-- 注册表单 核心部分 -->
+    <h3>填写注册信息</h3>
+    <form onsubmit="showData()">
+        
+        <p>
+            用户名：<input type="text" name="username" required>
+        </p>
+
+        <p>
+            密码：<input type="password" name="password" placeholder="6-16位字符">
+        </p>
+
+        <p>
+            确认密码：<input type="password" name="confirmPassword">
+        </p>
+
+        <p>
+            性别：
+            <!-- 第一种label：for+id -->
+            <input type="radio" name="gender" id="nan" value="男" checked>
+            <label for="nan">男</label>
+            <!-- 第二种label：包裹式 -->
+            <input type="radio" name="gender" id="nv" value="女">
+            <label for="nv">女</label>
+        </p>
+
+        <p>
+            出生日期：<input type="date" name="birthday">
+        </p>
+
+        <p>
+            邮箱：<input type="email" name="email" required>
+        </p>
+
+        <p>
+            手机号：<input type="tel" name="phone" pattern="[0-9]{11}">
+        </p>
+
+        <p>
+            兴趣爱好：
+            <input type="checkbox" name="hobby" value="阅读">阅读
+            <input type="checkbox" name="hobby" value="运动">运动
+            <input type="checkbox" name="hobby" value="听歌">听歌
+        </p>
+
+        <p>
+            头像：<input type="file" name="avatar" accept="image/*" multiple>
+        </p>
+
+        <p>
+            所在城市：
+            <select name="city">
+                <option value="长沙" selected>长沙</option>
+                <option value="娄底">娄底</option>
+                <option value="益阳">益阳</option>
+            </select>
+        </p>
+
+        <p>
+            个人简介：<br>
+            <textarea name="bio" rows="4" cols="50"></textarea>
+        </p>
+
+        <p>
+            <button type="submit">注册</button>
+            <button type="reset">重置</button>
+        </p>
+
+    </form>
+
+    <br><hr><br>
+
+    <!-- 有序列表：注册步骤 -->
+    <h3>注册步骤</h3>
+    <ol>
+        <li>填写个人信息</li>
+        <li>设置账号密码</li>
+        <li>阅读注册须知</li>
+        <li>点击注册完成</li>
+    </ol>
+
+    <!-- 无序列表：注意事项 -->
+    <h3>注意事项</h3>
+    <ul>
+        <li>带*的为必填项</li>
+        <li>手机号必须是11位数字</li>
+        <li>注册后请牢记密码</li>
+    </ul>
+
+</main>
+
+<footer>
+    <hr>
+    <p align="center">版权所有 软工2402 杨雨帆</p>
+</footer>
+
+<script>
+    function showData() {
+        console.log("表单提交了！");
+        console.log("用户名：" + document.getElementsByName("username")[0].value);
+        console.log("邮箱：" + document.getElementsByName("email")[0].value);
+        alert("提交成功！按F12看控制台");
+    }
+</script>
+
+</body>
+</html>
